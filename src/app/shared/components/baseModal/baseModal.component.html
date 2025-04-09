@@ -1,7 +1,4 @@
-<h2 mat-dialog-title>{{ title }}</h2>
-<div mat-dialog-content>
-  <ng-container *ngComponentOutlet="content"></ng-container>
-</div>
-<div mat-dialog-actions>
+<div class="flex">
+  <h2 mat-dialog-title>{{ data.message }}</h2>
   <button mat-button (click)="close()">Fechar</button>
 </div>

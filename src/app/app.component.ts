@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { ResponsiveModalService } from './shared/services/responsiveModal.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
+import { BaseModalComponent } from './shared/components/baseModal/baseModal.component';
 
 @Component({
   selector: 'app-root',
@@ -23,13 +24,13 @@ export class AppComponent {
   }
 
 
-  ngOnInit() {
-    console.log(this.data)
-  }
+  ngOnInit() {}
 
   openModal() {
-    this.responsiveModalService.open(AppComponent, {
+    this.responsiveModalService.open(BaseModalComponent, {
       message: 'Aberto via serviço responsivo!',
+    }).subscribe(res => {
+      console.log('Valor emitido no close do modal: ', res);
     });
   }
 }
